@@ -10,38 +10,6 @@ A lightweight proxy tool
 - 登录页重新居中并调整了页面颜色和卡片样式。
 - 保留 v5 的 Trojan 支持、Windows 系统代理修复、节点运行状态、代理池/代理链轮转等功能。
 
-## 你这次日志的原因
-
-日志：
-
-```text
-ss cipher err: cipher not supported
-```
-
-你的节点类似：
-
-```text
-ss://YWVzLTI1Ni1nY206密码...@host:port
-```
-
-其中 `YWVzLTI1Ni1nY206...` 是 Base64，解码后才是：
-
-```text
-aes-256-gcm:真实密码
-```
-
-旧版没有解码，所以把整段 Base64 当作加密方式，导致核心报“不支持的加密方式”。v6 已修复。
-
-## 支持协议
-
-```text
-ss://
-trojan://
-socks5://
-http://
-https://
-```
-
 VMess 仍不建议作为实际出口。
 
 ## 使用建议
